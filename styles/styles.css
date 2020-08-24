@@ -74,6 +74,9 @@ a {
 }
 /* раскрасим логотип */
 .logo {
+  display: inline-block;
+  margin-right: 95px;
+  padding-top: 24px;
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 26px;
@@ -89,10 +92,35 @@ a {
 .logo-head {
   color: var(--accent-color);
 }
+.nav,
+.nav-links,
+.nav-links li,
+.contact,
+.contact li{
+  display: inline-block;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.nav-links,
+.contact{
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+.nav-links li+li,
+.contact li+li{
+  margin-left: 50px;
+}
+
+.contact{
+  margin-left: 310px;
+}
+
 /* nav-links <a> определяем цвет навигации*/
 .nav-links .link {
-  
-  color: var(--title-text-color);
+   color: var(--title-text-color);
 }
 /* header, footer links hover, focus цвет при наведении, фокусе  */
 .nav-links .link.current,
@@ -112,19 +140,25 @@ a {
 }
 /* hero container */
 .hero-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: block;
+  text-align: center;
+  min-height: 600px;
  
 }
 /* hero title */
 .hero-title {
-  display: inline-block;
-  width: 696px;
-  min-height: 120px;
-  margin-top: 200px;
+  display: block;
+  
+  padding-top: 200px;
+  
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
   margin-bottom: 0;
   
+ /* размер текстового элемента на макете (имеет ли смысл?) */
+  width: 696px;
+    
   color: var(--white-color);
   font-weight: 900;
   font-size: 44px;
@@ -136,6 +170,7 @@ a {
 /* hero button */
 .hero-button {
   display: inline-block;
+  /* форма кнопки */
   min-width: 200px;
   min-height: 50px;
   padding-top: 10px;
@@ -143,7 +178,7 @@ a {
   padding-right: 32px;
   padding-left: 32px;
   margin-top: 30px;
-  margin-bottom: 200px;
+  
   
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
