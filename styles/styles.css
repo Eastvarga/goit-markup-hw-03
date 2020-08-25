@@ -45,6 +45,9 @@ body {
   line-height: 1.71;
   letter-spacing: 0.03em;
 }
+img{
+  display: block;
+}
 /* убираем подчеркивание у ссылок, включаем наследование от родителя*/
 a {
   color: inherit;
@@ -61,6 +64,7 @@ a {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
 }
 /* создаем контейнер для контента */
 .container,
@@ -71,17 +75,27 @@ a {
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
+ text-align: center;
+}
+
+
+}
+.nav{
+  vertical-align: middle;
+ 
 }
 /* раскрасим логотип */
 .logo {
   display: inline-block;
   margin-right: 95px;
-  padding-top: 24px;
+  /* padding-top: 24px; */
+ 
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.2;
   letter-spacing: 0.03em;
+ 
 }
 .header .logo {
   color: var(--title-text-color);
@@ -92,31 +106,43 @@ a {
 .logo-head {
   color: var(--accent-color);
 }
+
 .nav,
 .nav-links,
 .nav-links li,
 .contact,
-.contact li{
+.contact li
+{
   display: inline-block;
   text-align: center;
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
-}
 
-.nav-links,
-.contact{
+  
+}
+.nav-links{
   padding-top: 32px;
   padding-bottom: 32px;
+
 }
+.contact{
+  margin-left: 310px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+}
+
 .nav-links li+li,
 .contact li+li{
   margin-left: 50px;
 }
 
-.contact{
-  margin-left: 310px;
+.hero{
+  text-align: center;
 }
+
+
 
 /* nav-links <a> определяем цвет навигации*/
 .nav-links .link {
@@ -141,7 +167,6 @@ a {
 /* hero container */
 .hero-container {
   display: block;
-  text-align: center;
   min-height: 600px;
  
 }
@@ -156,14 +181,14 @@ a {
   margin-top: 0;
   margin-bottom: 0;
   
- /* размер текстового элемента на макете (имеет ли смысл?) */
+ /* размер (ширина) текстового элемента на макете (имеет ли смысл?) */
   width: 696px;
     
   color: var(--white-color);
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-  text-align: center;
+  
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -178,8 +203,7 @@ a {
   padding-right: 32px;
   padding-left: 32px;
   margin-top: 30px;
-  
-  
+    
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
  
@@ -188,16 +212,46 @@ a {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
-  text-align: center;
   letter-spacing: 0.06em;
 }
 /* hide title пока спрятаны заголовки белым цветом  */
 .hide-head {
   color: var(--white-color);
 }
+.our-features,
+.our-features li{
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  text-align: left;
+}
+.our-features li{
+  width: 267px;
+}
+
+.our-features li+li{
+  margin-left: 30px;
+}
+
+
+.our-features p{
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 10px;
+  
+}
+
 
 /* section title */
 .section-title {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+ 
+ padding-top: 94px;
+ padding-bottom: 50px;
+  
   color: var(--title-text-color);
   font-weight: 700;
   font-size: 36px;
@@ -213,23 +267,94 @@ a {
 }
 /* our faetures */
 .our-features .title {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 93px;
+
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
+/* what we do */
+.whatwedo,
+.whatwedo li,
+.our-team,
+.our-team li{
+display: inline-block;
+margin-top: 0;
+margin-bottom: 0;
+padding-left: 0;
+
+}
+.whatwedo li+li{
+  margin-left: 26px;
+}
+.whatwedo {
+padding-bottom: 90px;
+}
 /* our team */
-.our-team {
+.section.team{
   background-color: var(--alt-bg-color);
   font-size: 16px;
   line-height: 1.19;
   letter-spacing: 0.03em;
 }
+.our-team {
+  padding-bottom: 94px;
+  
+}
+.our-team li{
+  width: calc((100% - 30px*3)/4);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+border-radius: 0px 0px 4px 4px;
+}
+.our-team li+li{
+  margin-left: 25px;
+}
 /* our team title font */
 .our-team .title {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 30px;
+ 
   font-weight: 500;
 }
+.our-team p{
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 10px;
+}
+/* footer container */
+.footer .container{
+  text-align: left;
+}
+.footer .logo{
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: auto;
+  padding-top: 60px;
+}
+.address{
+  display: block;
+  width: 231px;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: auto;
+  padding-top: 20px;
+
+}
+.address a{
+  display: inline-block;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-top: 9px;
+}
+
 /* projects list */
 .projects li {
   background-color: var(--white-color);
