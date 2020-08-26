@@ -11,9 +11,8 @@
  
 */
 /* устанавливаем тип блочной модели для документа */
-html{
+html {
   box-sizing: border-box;
-  
 }
 /* включаем наследование всеми єлементами типа блочной модели */
 *,
@@ -23,7 +22,7 @@ html{
 }
 /* убрал аутлайн при фокусе */
 *:focus {
-   outline-style: none;
+  outline-style: none;
 }
 
 :root {
@@ -31,7 +30,7 @@ html{
   --title-text-color: #212121;
   --accent-color: #2196f3;
   --white-color: #ffffff;
- 
+
   --alt-bg-color: #f5f4fa;
   --secondary-bg-color: #2f303a;
   --footer-link-color: rgba(255, 255, 255, 0.6);
@@ -45,8 +44,10 @@ body {
   line-height: 1.71;
   letter-spacing: 0.03em;
 }
-img{
+img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 /* убираем подчеркивание у ссылок, включаем наследование от родителя*/
 a {
@@ -64,7 +65,6 @@ a {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-
 }
 /* создаем контейнер для контента */
 .container,
@@ -75,27 +75,23 @@ a {
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
- text-align: center;
+  text-align: center;
 }
 
-
-}
-.nav{
+.nav {
   vertical-align: middle;
- 
 }
 /* раскрасим логотип */
 .logo {
   display: inline-block;
   margin-right: 95px;
   /* padding-top: 24px; */
- 
+
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.2;
   letter-spacing: 0.03em;
- 
 }
 .header .logo {
   color: var(--title-text-color);
@@ -111,42 +107,35 @@ a {
 .nav-links,
 .nav-links li,
 .contact,
-.contact li
-{
+.contact li {
   display: inline-block;
   text-align: center;
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
-
-  
 }
-.nav-links{
+.nav-links {
   padding-top: 32px;
   padding-bottom: 32px;
-
 }
-.contact{
+.contact {
   margin-left: 310px;
   padding-top: 32px;
   padding-bottom: 32px;
-
 }
 
-.nav-links li+li,
-.contact li+li{
+.nav-links li + li,
+.contact li + li {
   margin-left: 50px;
 }
 
-.hero{
+.hero {
   text-align: center;
 }
 
-
-
 /* nav-links <a> определяем цвет навигации*/
 .nav-links .link {
-   color: var(--title-text-color);
+  color: var(--title-text-color);
 }
 /* header, footer links hover, focus цвет при наведении, фокусе  */
 .nav-links .link.current,
@@ -168,27 +157,26 @@ a {
 .hero-container {
   display: block;
   min-height: 600px;
- 
 }
 /* hero title */
 .hero-title {
   display: block;
-  
+
   padding-top: 200px;
-  
+
   margin-left: auto;
   margin-right: auto;
   margin-top: 0;
   margin-bottom: 0;
-  
- /* размер (ширина) текстового элемента на макете (имеет ли смысл?) */
+
+  /* размер (ширина) текстового элемента на макете (имеет ли смысл?) */
   width: 696px;
-    
+
   color: var(--white-color);
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-  
+
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -203,10 +191,10 @@ a {
   padding-right: 32px;
   padding-left: 32px;
   margin-top: 30px;
-    
+
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
- 
+
   color: var(--white-color);
   background-color: var(--accent-color);
   font-weight: 700;
@@ -219,39 +207,35 @@ a {
   color: var(--white-color);
 }
 .our-features,
-.our-features li{
+.our-features li {
   display: inline-block;
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
   text-align: left;
 }
-.our-features li{
+.our-features li {
   width: 267px;
 }
 
-.our-features li+li{
+.our-features li + li {
   margin-left: 30px;
 }
 
-
-.our-features p{
+.our-features p {
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 10px;
-  
 }
-
 
 /* section title */
 .section-title {
   display: block;
   margin-top: 0;
-  margin-bottom: 0;
- 
- padding-top: 94px;
- padding-bottom: 50px;
-  
+  margin-bottom: 50px;
+
+  padding-top: 94px;
+
   color: var(--title-text-color);
   font-weight: 700;
   font-size: 36px;
@@ -269,7 +253,7 @@ a {
 .our-features .title {
   margin-top: 0;
   margin-bottom: 0;
-  padding-top: 93px;
+  padding-top: 94px;
 
   font-weight: 700;
   font-size: 14px;
@@ -278,24 +262,29 @@ a {
   text-transform: uppercase;
 }
 /* what we do */
+.whatwedo {
+  font-size: 0;
+}
 .whatwedo,
 .whatwedo li,
 .our-team,
-.our-team li{
-display: inline-block;
-margin-top: 0;
-margin-bottom: 0;
-padding-left: 0;
-
+.our-team li {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
 }
-.whatwedo li+li{
-  margin-left: 26px;
+.wedo {
+  text-align: left;
+}
+.whatwedo li + li {
+  margin-left: 29px;
 }
 .whatwedo {
-padding-bottom: 90px;
+  padding-bottom: 94px;
 }
 /* our team */
-.section.team{
+.section.team {
   background-color: var(--alt-bg-color);
   font-size: 16px;
   line-height: 1.19;
@@ -303,34 +292,38 @@ padding-bottom: 90px;
 }
 .our-team {
   padding-bottom: 94px;
-  
 }
-.our-team li{
-  width: calc((100% - 30px*3)/4);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-border-radius: 0px 0px 4px 4px;
+
+.our-team li {
+  width: calc((100% - 30px * 3) / 4);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
-.our-team li+li{
+.our-team li + li {
   margin-left: 25px;
+}
+/* our team img */
+.our-team img {
+  margin-bottom: 30px;
 }
 /* our team title font */
 .our-team .title {
   margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 30px;
- 
+  margin-bottom: 10px;
+
   font-weight: 500;
 }
-.our-team p{
+.our-team p {
   margin-top: 0;
   margin-bottom: 0;
-  padding-top: 10px;
+  padding-bottom: 30px;
 }
 /* footer container */
-.footer .container{
+.footer .container {
   text-align: left;
 }
-.footer .logo{
+.footer .logo {
   display: inline-block;
   margin-top: 0;
   margin-bottom: 0;
@@ -338,7 +331,7 @@ border-radius: 0px 0px 4px 4px;
   margin-right: auto;
   padding-top: 60px;
 }
-.address{
+.address {
   display: block;
   width: 231px;
   margin-top: 0;
@@ -346,23 +339,23 @@ border-radius: 0px 0px 4px 4px;
   margin-left: 0;
   margin-right: auto;
   padding-top: 20px;
-
 }
-.address a{
+.address a {
   display: inline-block;
   margin-bottom: 0;
   margin-top: 0;
   padding-top: 9px;
 }
-
-/* projects list */
-.projects li {
-  background-color: var(--white-color);
-}
-.main-portfolio .container{
+/* main-portfolio */
+/* .main-portfolio .container{
   display: inline-flex;
   flex-direction: row;
   justify-content: center;
+} */
+
+.container.filter {
+  padding-top: 94px;
+  padding-bottom: 50px;
 }
 /* button */
 .button {
@@ -372,8 +365,9 @@ border-radius: 0px 0px 4px 4px;
   padding-right: 22px;
   border: 1px solid transparent;
   border-radius: 4px;
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-  
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+
   color: var(--title-text-color);
   background-color: var(--alt-bg-color);
   font-family: inherit;
@@ -383,18 +377,74 @@ border-radius: 0px 0px 4px 4px;
   line-height: 1.62;
   letter-spacing: 0.03em;
 }
-.button+.button{
+.button + .button {
   margin-left: 8px;
 }
 .button:hover,
 .button:focus {
   color: var(--white-color);
   background-color: var(--accent-color);
- 
 }
 
-
+/* projects list */
+.projects-link img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
 }
+.projects-div {
+  padding-bottom: 94px;
+}
+.projects {
+  display: inline-block;
+  font-size: 0;
+  /* text-align: center; */
+  /* border: 1px solid tomato; */
+  /* background-color: rgb(32, 158, 126); */
+}
+.projects li {
+  display: inline-block;
+
+  /* border: 1px solid tomato; */
+
+  width: 370px;
+  /* font-size: 0; */
+  background-color: var(--white-color);
+  border: 1px solid #eeeeee;
+}
+.projects,
+.projects li {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.projects-link .title,
+.projects-link p {
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: left;
+  padding-left: 24px;
+}
+.projects-link .title {
+  margin-bottom: 4px;
+}
+.projects-link p {
+  margin-bottom: 20px;
+}
+/* каждый не первый из трех элементов li будет отодвигаться от левого соседа на 30 пикселей */
+.projects li:not(:nth-child(3n + 1)) {
+  margin-left: 25px;
+  /* border: 1px solid tomato; */
+}
+/* каждый после третьего элемент li будет отодвигаться от верхней строки на 30 пикселей */
+.projects li:nth-child(n + 4) {
+  margin-top: 30px;
+}
+
 /* footer */
 .address {
   color: var(--white-color);
