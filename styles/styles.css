@@ -54,9 +54,12 @@ a {
   color: inherit;
   text-decoration: none;
 }
-/* убираем "точечки" в списках */
+/* убираем "точечки", марджины и левый паддинг в списках */
 .list {
   list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
 }
 /* header */
 .header {
@@ -65,29 +68,41 @@ a {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  /* добавлям линии согласно макета */
   border-top: 1px solid #fff;
   border-bottom: 1px solid #ececec;
 }
 /* создаем контейнер для контента */
 .container,
 .hero-container {
-  display: block;
   width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
 }
-
-.nav {
-  vertical-align: middle;
+/* создаем флекс элементы,
+ даем возможность переноса элементов на другую строку */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  /* background-color: teal; */
+}
+/* центрируем элементы в хедере по вертикали, 
+ добавляем паддинги*/
+.header .container {
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 25px;
+}
+/* элементы хедера превращаем во флекс элементы */
+.nav-links,
+.contact {
+  display: flex;
 }
 /* раскрасим логотип */
 .logo {
-  display: inline-block;
-  margin-right: 95px;
-  /* padding-top: 24px; */
+  margin-right: 93px;
 
   font-family: "Raleway", sans-serif;
   font-weight: 700;
@@ -104,37 +119,18 @@ a {
 .logo-head {
   color: var(--accent-color);
 }
-
-.nav,
-.nav-links,
-.nav-links li,
-.contact,
-.contact li {
-  display: inline-block;
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 0;
-}
-.nav-links {
-  padding-top: 32px;
-  padding-bottom: 32px;
-}
-.contact {
-  margin-left: 310px;
-  padding-top: 32px;
-  padding-bottom: 32px;
-}
-
-.nav-links li + li,
-.contact li + li {
+/* навигация по сайту */
+.nav-links li + li {
   margin-left: 50px;
 }
-
-.hero {
-  text-align: center;
+/* расширяем зону активации ссылок в шапке для лучшего юзабилити */
+.header .link {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
-
 /* nav-links <a> определяем цвет навигации*/
 .nav-links .link {
   color: var(--title-text-color);
@@ -149,30 +145,37 @@ a {
 .address .link:focus {
   color: var(--accent-color);
 }
+/* контактная информация */
+.contact {
+  margin-left: auto;
+}
+.contact li + li {
+  margin-left: 50px;
+}
+/* Секция героя */
+.hero-center {
+  align-self: center;
+  width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
+/* центрируем текст в герое */
+.hero {
+  text-align: center;
+}
 
 /* hero, footer заливка фона*/
 .hero,
 .footer {
   background-color: var(--secondary-bg-color);
 }
-/* hero container */
-.hero-container {
-  display: block;
-  min-height: 600px;
-}
-/* hero title */
+
+/* hero title заголовок. Убираем дефолтные марджины */
 .hero-title {
-  display: block;
-
-  padding-top: 200px;
-
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 0;
-  margin-bottom: 0;
-
-  /* размер (ширина) текстового элемента на макете (имеет ли смысл?) */
-  width: 696px;
+  margin-bottom: 30px;
 
   color: var(--white-color);
   font-weight: 900;
@@ -182,7 +185,7 @@ a {
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
-/* hero button */
+/* hero button кнопка */
 .hero-button {
   display: inline-block;
   /* форма кнопки */
@@ -192,7 +195,6 @@ a {
   padding-bottom: 10px;
   padding-right: 32px;
   padding-left: 32px;
-  margin-top: 30px;
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
@@ -204,58 +206,57 @@ a {
   line-height: 1.87;
   letter-spacing: 0.06em;
 }
+/* цвет при ховере, фокусе согласно макета */
+.hero-button:hover,
+.hero-button:focus {
+  background-color: #188ce8;
+}
 /* hide title пока спрятаны заголовки белым цветом  */
 .hide-head {
   color: var(--white-color);
 }
+
+/* Our features 
+Наши особенности */
+/* создаем объекты флекс и активируем возможность переноса строки для них */
 .our-features,
 .our-features li {
-  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
   text-align: left;
 }
-.our-features li {
-  width: 267px;
+/* отступы между секциями */
+.our-features {
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
-
-.our-features li + li {
+/* устанавливаем ширину контента для элементов */
+.our-features li {
+  width: calc((100% - 30px * 3) / 4);
+}
+/* задаем отступы между элементами, марджины */
+.our-features li:not(:nth-child(4n + 1)) {
   margin-left: 30px;
 }
 
-.our-features p {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 10px;
-}
-
-/* section title */
-.section-title {
-  display: block;
-  margin-top: 0;
-  margin-bottom: 50px;
-
-  padding-top: 94px;
-
-  color: var(--title-text-color);
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
-  text-align: center;
-  letter-spacing: 0.03em;
-}
-/* features, our team, projects titles*/
+/* features, our team, projects titles цвет текста заголовков*/
 .our-features .title,
 .our-team .title,
 .projects .title {
   color: var(--title-text-color);
 }
-/* our faetures */
-.our-features .title {
+/* убираем марджины у абзацев */
+.our-features p {
   margin-top: 0;
   margin-bottom: 0;
-  padding-top: 94px;
+}
+/* задаем шрифты, убираем дефолтные марджины  */
+.our-features .title {
+  margin-top: 0;
+  margin-bottom: 10px;
 
   font-weight: 700;
   font-size: 14px;
@@ -263,49 +264,72 @@ a {
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
-/* what we do */
-.whatwedo {
-  font-size: 0;
+
+/* What-we-do 
+Чем мы занимаемся*/
+/* section title заголовок: шрифты, убираем дефолтные марджины*/
+.section-title {
+  margin-top: 0;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--title-text-color);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  letter-spacing: 0.03em;
 }
+/* делаем из спимков-элементов флекс элементы, 
+включаем перенос строки для них,
+убираем дефолтные значения марджина и паддинга*/
 .whatwedo,
-.whatwedo li,
-.our-team,
-.our-team li {
-  display: inline-block;
+.our-team {
+  display: flex;
+  flex-wrap: wrap;
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
 }
-.wedo {
-  text-align: left;
-}
-.whatwedo li + li {
-  margin-left: 29px;
-}
+/* отступ до следующей секции */
 .whatwedo {
   padding-bottom: 94px;
 }
-/* our team */
+/* устанавливаем ширину контента */
+.whatwedo li {
+  width: calc((100% - 30px * 2) / 3);
+}
+/* задаем отступы между элементами контента марджины*/
+.whatwedo li:not(:nth-child(3n + 1)) {
+  margin-left: 30px;
+}
+
+/* Our team */
+/* флекс элементы списку задали ранее */
+/* задаем шрифт и цвет секции */
 .section.team {
   background-color: var(--alt-bg-color);
   font-size: 16px;
   line-height: 1.19;
   letter-spacing: 0.03em;
 }
+/* задаем отступ до футера */
 .our-team {
   padding-bottom: 94px;
 }
-
+/* задаем ширину контента, тень карточке,и ориентацию текста */
 .our-team li {
   width: calc((100% - 30px * 3) / 4);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
+  text-align: center;
 }
-.our-team li + li {
-  margin-left: 25px;
+/* задаем каждому не первому в строке элементу левый марджин */
+.our-team li:not(:nth-child(4n + 1)) {
+  margin-left: 30px;
 }
-/* our team img */
+/* our team img задаем нижний марджин картинке*/
 .our-team img {
   margin-bottom: 30px;
 }
@@ -316,50 +340,55 @@ a {
 
   font-weight: 500;
 }
+/* отступ для формы карточки */
 .our-team p {
   margin-top: 0;
   margin-bottom: 0;
   padding-bottom: 30px;
 }
-/* footer container */
-.footer .container {
-  text-align: left;
+
+/* footer */
+/* делаем контент лого+адресс шириной на четверть от ширины страницы */
+.div-address {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc((100% - 30px * 3) / 4);
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
+/* убираем дефолтные отступы не полагаемся на наследование */
 .footer .logo {
-  display: inline-block;
+  display: block;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 20px;
   margin-left: 0;
   margin-right: auto;
-  padding-top: 60px;
 }
+/* убираем дефолтные отступы не полагаемся на наследование */
 .address {
   display: block;
-  width: 231px;
+  width: 220px;
   margin-top: 0;
   margin-bottom: 0;
   margin-left: 0;
   margin-right: auto;
-  padding-top: 20px;
 }
+/* задаем ссылкам вертикальные отступы */
 .address a {
   display: inline-block;
   margin-bottom: 0;
   margin-top: 0;
   padding-top: 9px;
 }
-/* main-portfolio */
-/* .main-portfolio .container{
-  display: inline-flex;
-  flex-direction: row;
-  justify-content: center;
-} */
 
+/* задаем фильтрбоксу вертикальные отступы 
+с центрированием элементов по горизонтали*/
 .container.filter {
   padding-top: 94px;
   padding-bottom: 50px;
+  justify-content: center;
 }
-/* button */
+/* filter button задаем шрифты и геометрию кнопок */
 .button {
   padding-top: 6px;
   padding-bottom: 6px;
@@ -379,64 +408,60 @@ a {
   line-height: 1.62;
   letter-spacing: 0.03em;
 }
-.button + .button {
-  margin-left: 8px;
+/* задаем отступы для всех кроме последней кнопок*/
+.button:not(:last-child) {
+  margin-right: 8px;
 }
+/* окраска при ховере фокусе */
 .button:hover,
 .button:focus {
   color: var(--white-color);
   background-color: var(--accent-color);
 }
 
-/* projects list */
-.projects-link img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 20px;
-}
-.projects-div {
+/* projects list Лист с проектами*/
+.projects {
   padding-bottom: 94px;
 }
-.projects {
-  display: inline-block;
-  font-size: 0;
-  /* text-align: center; */
-  /* border: 1px solid tomato; */
-  /* background-color: rgb(32, 158, 126); */
-}
+/* делаем из списка флекс элемент 
+с возможностью переноса на другую строку */
+.projects,
 .projects li {
-  display: inline-block;
-
-  /* border: 1px solid tomato; */
-
-  width: 370px;
-  /* font-size: 0; */
+  display: flex;
+  flex-wrap: wrap;
+}
+/* задаем ширину контента для 3 элементов в строке */
+.projects li {
+  width: calc((100% - 30px * 2) / 3);
   background-color: var(--white-color);
   border: 1px solid #eeeeee;
 }
-.projects,
-.projects li {
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 0;
-  padding-right: 0;
+/* задаем нижний отступ от изображения в карточке */
+.card-img {
+  padding-bottom: 20px;
 }
-.projects-link .title,
-.projects-link p {
+
+/* задаем позицию текста, и отступы описанию карточки */
+.card-title {
   margin-top: 0;
   margin-bottom: 0;
   text-align: left;
   padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 20px;
 }
+/* убираем дефолтные отступы */
+/* задаем отступ снизу заголовку карточки */
 .projects-link .title {
+  margin-top: 0;
   margin-bottom: 4px;
 }
+/* убираем дефолтные отступы */
 .projects-link p {
-  margin-bottom: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
+
 /* каждый не первый из трех элементов li будет отодвигаться от левого соседа на 30 пикселей */
 .projects li:not(:nth-child(3n + 1)) {
   margin-left: 25px;
