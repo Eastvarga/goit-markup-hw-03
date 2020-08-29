@@ -14,12 +14,7 @@
 html {
   box-sizing: border-box;
 }
-/* включаем наследование всеми єлементами типа блочной модели */
-*,
-*::after,
-*::before {
-  box-sizing: inherit;
-}
+
 /* убрал аутлайн при фокусе */
 *:focus {
   outline-style: none;
@@ -57,8 +52,7 @@ a {
 /* убираем "точечки", марджины и левый паддинг в списках */
 .list {
   list-style: none;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0;
   padding-left: 0;
 }
 /* header */
@@ -78,8 +72,7 @@ a {
   width: 1200px;
   padding: 0 15px;
 
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 /* создаем флекс элементы,
  даем возможность переноса элементов на другую строку */
@@ -102,7 +95,8 @@ a {
   display: flex;
 }
 /* центрируем элементы */
-.nav {
+.nav,
+.contact {
   align-items: center;
 }
 /* раскрасим логотип */
@@ -364,16 +358,16 @@ a {
 /* задаем фильтрбоксу вертикальные отступы 
 с центрированием элементов по горизонтали*/
 .container.filter {
-  padding-top: 94px;
-  padding-bottom: 50px;
+  padding: 94px 0 50px;
   justify-content: center;
+}
+.filter-list {
+  display: flex;
+  flex-wrap: wrap;
 }
 /* filter button задаем шрифты и геометрию кнопок */
 .button {
-  padding-top: 6px;
-  padding-bottom: 6px;
-  padding-left: 22px;
-  padding-right: 22px;
+  padding: 6px 22px;
   border: 1px solid transparent;
   border-radius: 4px;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
@@ -389,7 +383,7 @@ a {
   letter-spacing: 0.03em;
 }
 /* задаем отступы для всех кроме последней кнопок*/
-.button:not(:last-child) {
+.filter-list .item:not(:last-child) {
   margin-right: 8px;
 }
 /* окраска при ховере фокусе */
@@ -400,35 +394,28 @@ a {
 }
 
 /* projects list Лист с проектами*/
-.projects {
+.container.projects {
   padding-bottom: 94px;
 }
 /* делаем из списка флекс элемент 
 с возможностью переноса на другую строку */
-.projects,
-.projects li {
+.projects-list,
+.projects-list li {
   display: flex;
   flex-wrap: wrap;
 }
 /* задаем ширину контента для 3 элементов в строке */
-.projects li {
+.projects-list li {
   width: calc((100% - 30px * 2) / 3);
   background-color: var(--white-color);
   border: 1px solid #eeeeee;
 }
-/* задаем нижний отступ от изображения в карточке */
-.card-img {
-  padding-bottom: 20px;
-}
 
 /* задаем позицию текста, и отступы описанию карточки */
 .card-title {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0;
+  padding: 20px 24px;
   text-align: left;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-bottom: 20px;
 }
 /* убираем дефолтные отступы */
 /* задаем отступ снизу заголовку карточки */
@@ -438,13 +425,12 @@ a {
 }
 /* убираем дефолтные отступы */
 .projects-link p {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 /* каждый не первый из трех элементов li будет отодвигаться от левого соседа на 30 пикселей */
 .projects li:not(:nth-child(3n + 1)) {
-  margin-left: 25px;
+  margin-left: 30px;
   /* border: 1px solid tomato; */
 }
 /* каждый после третьего элемент li будет отодвигаться от верхней строки на 30 пикселей */
@@ -467,12 +453,12 @@ a {
   font-style: normal;
 }
 /* portfolio projects задаем основной шрифт списка проектов */
-.projects {
+.projects-list {
   font-size: 16px;
   line-height: 1.87;
 }
 /* projects title */
-.projects .title {
+.projects-list .title {
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
