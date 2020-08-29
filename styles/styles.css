@@ -191,10 +191,7 @@ a {
   /* форма кнопки */
   min-width: 200px;
   min-height: 50px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 32px;
-  padding-left: 32px;
+  padding: 10px 32px;
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
@@ -223,15 +220,13 @@ a {
 .our-features li {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0;
   padding-left: 0;
   text-align: left;
 }
 /* отступы между секциями */
-.our-features {
-  padding-top: 94px;
-  padding-bottom: 94px;
+.features {
+  padding: 94px 0;
 }
 /* устанавливаем ширину контента для элементов */
 .our-features li {
@@ -250,13 +245,11 @@ a {
 }
 /* убираем марджины у абзацев */
 .our-features p {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0;
 }
 /* задаем шрифты, убираем дефолтные марджины  */
 .our-features .title {
-  margin-top: 0;
-  margin-bottom: 10px;
+  margin: 0 0 10px 0;
 
   font-weight: 700;
   font-size: 14px;
@@ -269,10 +262,10 @@ a {
 Чем мы занимаемся*/
 /* section title заголовок: шрифты, убираем дефолтные марджины*/
 .section-title {
-  margin-top: 0;
-  margin-bottom: 50px;
+  margin: 0 auto 50px;
+  /* margin-bottom: 50px;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto; */
   color: var(--title-text-color);
   font-weight: 700;
   font-size: 36px;
@@ -283,7 +276,7 @@ a {
 /* делаем из спимков-элементов флекс элементы, 
 включаем перенос строки для них,
 убираем дефолтные значения марджина и паддинга*/
-.whatwedo,
+.whatwedo-list,
 .our-team {
   display: flex;
   flex-wrap: wrap;
@@ -292,31 +285,30 @@ a {
   padding-left: 0;
 }
 /* отступ до следующей секции */
-.whatwedo {
+.what-we-do {
   padding-bottom: 94px;
 }
 /* устанавливаем ширину контента */
-.whatwedo li {
+.whatwedo-list li {
   width: calc((100% - 30px * 2) / 3);
 }
 /* задаем отступы между элементами контента марджины*/
-.whatwedo li:not(:nth-child(3n + 1)) {
+.whatwedo-list li:not(:nth-child(3n + 1)) {
   margin-left: 30px;
 }
 
 /* Our team */
 /* флекс элементы списку задали ранее */
 /* задаем шрифт и цвет секции */
+/* задаем отступ до секций соседей */
 .section.team {
+  padding: 94px 0;
   background-color: var(--alt-bg-color);
   font-size: 16px;
   line-height: 1.19;
   letter-spacing: 0.03em;
 }
-/* задаем отступ до футера */
-.our-team {
-  padding-bottom: 94px;
-}
+
 /* задаем ширину контента, тень карточке,и ориентацию текста */
 .our-team li {
   width: calc((100% - 30px * 3) / 4);
@@ -330,56 +322,43 @@ a {
 .our-team li:not(:nth-child(4n + 1)) {
   margin-left: 30px;
 }
-/* our team img задаем нижний марджин картинке*/
-.our-team img {
-  margin-bottom: 30px;
-}
-/* our team title font */
+/* our team title font,
+ задаем марджин до картинки и до абзаца*/
 .our-team .title {
-  margin-top: 0;
-  margin-bottom: 10px;
+  margin: 30px 0 10px;
 
   font-weight: 500;
 }
 /* отступ для формы карточки */
 .our-team p {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0;
   padding-bottom: 30px;
 }
 
 /* footer */
+/* задаем отступы для футера */
+.footer {
+  padding: 60px 0;
+}
 /* делаем контент лого+адресс шириной на четверть от ширины страницы */
 .div-address {
   display: flex;
   flex-wrap: wrap;
   width: calc((100% - 30px * 3) / 4);
-  padding-top: 60px;
-  padding-bottom: 60px;
 }
 /* убираем дефолтные отступы не полагаемся на наследование */
 .footer .logo {
-  display: block;
-  margin-top: 0;
-  margin-bottom: 20px;
-  margin-left: 0;
-  margin-right: auto;
+  margin: 0 auto 20px 0;
 }
 /* убираем дефолтные отступы не полагаемся на наследование */
 .address {
-  display: block;
   width: 220px;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: auto;
+  margin: 0 auto 0 0;
 }
 /* задаем ссылкам вертикальные отступы */
 .address a {
-  display: inline-block;
-  margin-bottom: 0;
-  margin-top: 0;
-  padding-top: 9px;
+  display: block;
+  margin: 9px 0 0;
 }
 
 /* задаем фильтрбоксу вертикальные отступы 
