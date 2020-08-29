@@ -132,8 +132,7 @@ a {
 /* расширяем зону активации ссылок в шапке для лучшего юзабилити */
 .header .link {
   display: block;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0;
   padding: 5px 0;
 }
 /* nav-links <a> определяем цвет навигации*/
@@ -158,17 +157,13 @@ a {
   margin-left: 50px;
 }
 /* Секция героя */
-.hero-center {
-  align-self: center;
-  width: 600px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-top: 200px;
-  padding-bottom: 200px;
-}
 /* центрируем текст в герое */
 .hero {
+  display: flex;
+  flex-wrap: wrap;
   text-align: center;
+  margin: 0 auto;
+  padding: 200px 0;
 }
 
 /* hero, footer заливка фона*/
@@ -179,8 +174,8 @@ a {
 
 /* hero title заголовок. Убираем дефолтные марджины */
 .hero-title {
-  margin-top: 0;
-  margin-bottom: 30px;
+  width: 600px;
+  margin: 0 auto 30px;
 
   color: var(--white-color);
   font-weight: 900;
