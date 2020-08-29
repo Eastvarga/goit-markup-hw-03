@@ -76,8 +76,8 @@ a {
 .container,
 .hero-container {
   width: 1200px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 0 15px;
+
   margin-left: auto;
   margin-right: auto;
 }
@@ -90,15 +90,20 @@ a {
 }
 /* центрируем элементы в хедере по вертикали, 
  добавляем паддинги*/
-.header .container {
+.header {
   align-items: center;
   padding-top: 24px;
   padding-bottom: 25px;
 }
 /* элементы хедера превращаем во флекс элементы */
+.nav,
 .nav-links,
 .contact {
   display: flex;
+}
+/* центрируем элементы */
+.nav {
+  align-items: center;
 }
 /* раскрасим логотип */
 .logo {
@@ -119,17 +124,17 @@ a {
 .logo-head {
   color: var(--accent-color);
 }
+
 /* навигация по сайту */
 .nav-links li + li {
   margin-left: 50px;
 }
 /* расширяем зону активации ссылок в шапке для лучшего юзабилити */
 .header .link {
-  display: inline-block;
+  display: block;
   margin-top: 0;
   margin-bottom: 0;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding: 5px 0;
 }
 /* nav-links <a> определяем цвет навигации*/
 .nav-links .link {
